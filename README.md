@@ -2,4 +2,4 @@
 
 ## Showing Tours Features and pricing scheme
 
-All detail appeded
+* Company tours features section demo with addition of __popup__ button.
