@@ -1,5 +1,6 @@
-///////////////VARIABLES///////////////
+/////////  VARIABLES
 $color-green-light: #55c57a;
+$color-green-primary: #14bd4c;
 $color-green-dark: #7ed56f;
 
 $color-orange-light: #ffb900;
@@ -8,9 +9,17 @@ $color-orange-dark: #ff7730;
 $color-blue-light: #2998ff;
 $color-blue-dark: #5643fa;
 
-///////////////////////////////
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
 
-////////// MIXINS//////////////
+$color-grey-dark: #777;
+$color-grey-dark-1: #999;
+$color-grey-dark-2: #333;
+
+$color-black: #000;
+
+//////////////////////
+//////////// MIXINS
 
 @mixin clearfix {
   &::after {
@@ -20,7 +29,7 @@ $color-blue-dark: #5643fa;
   }
 }
 
-//////////////////////////////
+///////////////////////
 
 *,
 *::before,
@@ -66,6 +75,7 @@ body {
   padding: 20rem 0;
   background-color: #eee;
   text-align: center;
+  z-index: 1;
 }
 
 .heading-secondary {
@@ -301,4 +311,101 @@ body {
   &-box {
     margin-top: 10rem;
   }
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.25);
+  transition: all 0.4s;
+
+  &:target {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+  }
+
+  &__content {
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 3px;
+  }
+
+  &__left {
+    width: 33.333333%;
+    float: left;
+  }
+
+  &__right {
+    width: 66.666667%;
+    float: left;
+  }
+
+  &__close {
+    font-size: 3rem;
+    text-decoration: none;
+    color: $color-grey-dark-2;
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    transition: color 0.2s;
+
+    &:hover {
+      color: $color-green-dark;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    display: block;
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    color: $color-grey-dark-2;
+    padding: 2rem;
+
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+
+    column-count: 2;
+    column-gap: 2rem;
+    column-rule: 2px solid $color-grey-light-2;
+  }
+}
+
+.heading-2 {
+  text-align: left;
+  margin: 2rem;
+  margin-top: 6rem;
+}
+.heading-2-2 {
+  font-size: 3rem;
+}
+
+.heading-teriary {
+  font-size: 1.8rem;
+  color: $color-grey-dark-2;
+  padding-left: 2rem;
+  margin-top: 6rem;
+}
+
+.box-2 {
+  margin-top: 1rem;
+}
+.btn-2 {
+  margin: 3rem 2rem;
 }
